@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.AppBarLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_bar"
     android:layout_width="match_parent"
-    android:layout_height="168dp"
-    android:background="?colorPrimary">
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay">
 
-    <android.support.design.widget.CollapsingToolbarLayout
-        android:id="@+id/collapsing_toolbar_layout"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
-        app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
-        app:expandedTitleMarginStart="72dp"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+        android:layout_height="wrap_content">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/app_bar"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:navigationIcon="@drawable/ic_menu"
-            app:contentInsetStart="72dp"
-            app:layout_collapseMode="pin" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/material_layout_vertical_spacing_between_content_areas"
+            android:padding="@dimen/material_layout_vertical_spacing_between_content_areas"
+            android:src="@drawable/logo"
+            tools:ignore="ContentDescription" />
 
-    </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.v7.widget.Toolbar>
 
 </android.support.design.widget.AppBarLayout>
