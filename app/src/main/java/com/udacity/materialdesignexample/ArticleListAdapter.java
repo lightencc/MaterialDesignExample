@@ -1,6 +1,7 @@
 package com.udacity.materialdesignexample;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.RecyclerView;
@@ -38,8 +39,9 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                parent.getContext().startActivity(new Intent(Intent.ACTION_VIEW,
-//                        ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                parent.getContext().startActivity(
+                    ArticleDetailActivity.newInstance(parent.getContext(),vh.getAdapterPosition())
+                );
             }
         });
         return vh;

@@ -60,4 +60,8 @@
     <dimen name="settings_advanced_checkbox_margin_start">0dp</dimen>
     <integer name="settings_advanced_checkbox_column">0</integer>
     <integer name="settings_advanced_checkbox_column_span">3</integer>
+
+    <dimen name="material_layout_app_bar_height">320dp</dimen>
+    <dimen name="expanded_toolbar_height">80dp</dimen>
+    <dimen name="expanded_toolbar_title_margin_bottom">40dp</dimen>
 </resources>

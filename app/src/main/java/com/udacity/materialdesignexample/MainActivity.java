@@ -24,9 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         ((CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_layout)).setTitle("Screen Title");
 
-        Gson gson = new Gson();
-        List<ArticleModel> articles = gson.fromJson(DataProvider.JSON, new TypeToken<List<ArticleModel>>(){}.getType());
-        ArticleListAdapter adapter = new ArticleListAdapter(this,articles);
+
+        ArticleListAdapter adapter = new ArticleListAdapter(this,DataProvider.getArticles(this));
 
         RecyclerView rv = (RecyclerView) findViewById(R.id.recyclerview);
         StaggeredGridLayoutManager staggeredGridLayoutManager =
