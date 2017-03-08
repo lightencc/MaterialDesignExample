@@ -3,6 +3,7 @@ package com.udacity.materialdesignexample;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Slide;
+import android.view.Gravity;
+import android.view.animation.AnimationUtils;
 
 import java.util.List;
 
@@ -60,6 +64,15 @@ public class ArticleDetailActivity extends AppCompatActivity  {
 
         mPagerAdapter.notifyDataSetChanged();
         mPager.setCurrentItem(mCurrentIndex, false);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Slide slide = new Slide(Gravity.BOTTOM);
+            slide.addTarget(R.id.article_body);
+            slide.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator
+                    .linear_out_slow_in));
+            slide.setDuration(3000);
+            getWindow().setEnterTransition(slide);
+        }
     }
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
