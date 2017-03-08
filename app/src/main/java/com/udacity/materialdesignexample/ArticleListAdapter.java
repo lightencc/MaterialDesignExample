@@ -1,8 +1,11 @@
 package com.udacity.materialdesignexample;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
@@ -40,7 +43,8 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
             @Override
             public void onClick(View view) {
                 parent.getContext().startActivity(
-                    ArticleDetailActivity.newInstance(parent.getContext(),vh.getAdapterPosition())
+                    ArticleDetailActivity.newInstance(parent.getContext(),vh.getAdapterPosition()),
+                        ActivityOptions.makeSceneTransitionAnimation((AppCompatActivity) parent.getContext(),view,view.getTransitionName()).toBundle()
                 );
             }
         });

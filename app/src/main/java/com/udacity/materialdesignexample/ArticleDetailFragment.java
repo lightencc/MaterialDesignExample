@@ -124,7 +124,8 @@ public class ArticleDetailFragment extends Fragment {
             mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    getActivity().finish();
+                    //getActivity().finish();
+                    getActivity().finishAfterTransition();
                 }
             });
         }
