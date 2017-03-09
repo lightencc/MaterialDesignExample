@@ -14,6 +14,11 @@
         <item name="android:windowReenterTransition">@transition/grid_reenter</item>
     </style>
 
+
+    <style name="AppTheme.Detail">
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_photo</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
